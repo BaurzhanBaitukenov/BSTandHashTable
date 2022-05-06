@@ -44,7 +44,7 @@ public class MyHashTable <K,V>{
     }
 
 
-    public Object remove(K key) {
+    public V remove(K key) {
         int hashedKey = hash(key);
         HashNode head = chainArray[hashedKey];
         HashNode previous = null;
@@ -63,7 +63,7 @@ public class MyHashTable <K,V>{
         else{
             chainArray[hashedKey] = head.next;
         }
-        return head.value;
+        return (V) head.value;
     }
 
 
